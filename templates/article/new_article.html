@@ -5,7 +5,7 @@
   <form action="{% url 'article:new_article' %}" method='post'>
     {% csrf_token %}
     {{ form.as_p }}
-    <button name='submit'>Add article</button>
+    <button type='submit' class="btn btn-primary">Add article</button>
   </form>
 
 {% endblock content %}
