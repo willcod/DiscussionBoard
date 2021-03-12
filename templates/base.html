@@ -9,5 +9,11 @@
 Welcome to Discussion Board
 </h1>
 
+{% if user.is_authenticated %}
+  <p>hello, {{user.username}} </p>
+{% else %}
+  <p>hello, guest!</p>
+{% endif %}
+
 {% block content %}
 {% endblock content %}
