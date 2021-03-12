@@ -30,6 +30,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'article',
+    'users',
     'bootstrap4',
 
     'django.contrib.admin',
@@ -70,7 +71,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'discussion_board_project.wsgi.application'
 
-
+# LOGOUT_REDIRECT_URL = 'users.login'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 

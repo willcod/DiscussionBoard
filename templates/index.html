@@ -2,13 +2,25 @@
 {% block content %}
 <p>Welcome</p>
 
-<ul>
-{% for article in articles %}
-    <li>{{article}}</li>
-{% empty %}
-    <li>No articles</li>
-{% endfor %}
-</ul>
+{% if user.is_authenticated %}
+    <ul>
+    {% for article in articles %}
+        <li>{{article}}</li>
+    {% empty %}
+        <li>No articles</li>
+    {% endfor %}
+    </ul>
+    <div>
+    <a href="{% url 'article:new_article' %}">Add a new article</a>
+    </div>
+    <div>
+        <a href="{% url 'users:logout' %}">log out</a>
+    </div>
+{% else %}
+<div>
+    <a href="{% url 'users:login' %}">Log in</a>
+<div>
+{% endif %}
 
-<a href="{% url 'article:new_article' %}">Add a new article</a>
+
 {% endblock content %}

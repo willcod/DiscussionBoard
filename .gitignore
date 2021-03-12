@@ -1,4 +1,2 @@
-venv/ 
+env/ 
 *.pyc
-*sqlite3
-settings/local.py
