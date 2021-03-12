@@ -1,5 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <p>Welcome</p>
+
+<ul>
+{% for article in articles %}
+    <li>{{article}}</li>
+{% empty %}
+    <li>No articles</li>
+{% endfor %}
+</ul>
+
 <a href="{% url 'article:new_article' %}">Add a new article</a>
 {% endblock content %}

@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 from .forms import ArticleForm
+from .models import Article
 
 # Create your views here.
 def index(request):
-    return render(request, 'index.html')
+    articles = Article.objects.order_by('created_time')
+    return render(request, 'index.html', {'articles':articles})
 
 def new_article(request):
 
